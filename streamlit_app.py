@@ -1,13 +1,19 @@
 import streamlit as st
+import requests
+
+def get_medical_info(symptom):
+    api_url = "https://reference.medscape.com/?_gl=1*xvz8fx*_gcl_au*OTEyNDAyNzg3LjE3Mzk4NDAwMzI."
+    response = requests.get(api_url, params={"symptom": symptom})
+    return response.json()
+
 from openai import OpenAI
 
 # Show title and description.
-st.title("💬 Chatbot")
+st.title("🩺 Healthcare Assistant")
 st.write(
-    "This is a simple chatbot that uses OpenAI's GPT-3.5 model to generate responses. "
-    "To use this app, you need to provide an OpenAI API key, which you can get [here](https://platform.openai.com/account/api-keys). "
-    "You can also learn how to build this app step by step by [following our tutorial](https://docs.streamlit.io/develop/tutorials/llms/build-conversational-apps)."
-)
+    "This AI-powered healthcare assistant provides general medical guidance and information. "
+    "⚠️ **Disclaimer:** This is not a substitute for professional medical advice. "
+    "If you have a medical emergency, please contact a doctor immediately.")
 
 # Ask user for their OpenAI API key via `st.text_input`.
 # Alternatively, you can store the API key in `./.streamlit/secrets.toml` and access it
@@ -23,7 +29,8 @@ else:
     # Create a session state variable to store the chat messages. This ensures that the
     # messages persist across reruns.
     if "messages" not in st.session_state:
-        st.session_state.messages = []
+        st.session_state.messages = [{"role": "system", "content": "You are a helpful healthcare assistant providing general medical advice. You do NOT diagnose conditions or prescribe medication. Always advise users to consult a licensed medical professional for serious concerns."}
+    ]
 
     # Display the existing chat messages via `st.chat_message`.
     for message in st.session_state.messages:
@@ -36,8 +43,12 @@ else:
 
         # Store and display the current prompt.
         st.session_state.messages.append({"role": "user", "content": prompt})
-        with st.chat_message("user"):
-            st.markdown(prompt)
+        with st.chat_message("assistant"):
+            st.write("💡 Suggested questions:")
+            st.markdown("- What are common symptoms of the flu?")
+            st.markdown("- How can I relieve a sore throat?")
+            st.markdown("- What are some home remedies for a cough?")
+
 
         # Generate a response using the OpenAI API.
         stream = client.chat.completions.create(
