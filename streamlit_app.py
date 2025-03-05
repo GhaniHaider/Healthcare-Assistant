@@ -45,9 +45,9 @@ else:
         st.session_state.messages.append({"role": "user", "content": prompt})
         with st.chat_message("assistant"):
             st.write("💡 Suggested questions:")
-            st.markdown("- What are common symptoms of the flu?")
-            st.markdown("- How can I relieve a sore throat?")
-            st.markdown("- What are some home remedies for a cough?")
+            st.markdown("- How long have you had the symptoms?")
+            st.markdown("- Is there something that improves or worsens your symptoms?")
+            st.markdown("- Are you experiencing any other symptoms?")
 
 
         # Generate a response using the OpenAI API.
