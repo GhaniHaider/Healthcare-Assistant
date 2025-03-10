@@ -83,11 +83,42 @@ else:
 
     # Function to check if the query is health-related
 
-    def is_health_related(user_input):
+   def is_health_related(user_input):
+    health_keywords = [
+        "health", "doctor", "medicine", "treatment", "symptom", "fever", "cough", "headache", "pain", 
+        "disease", "illness", "clinic", "tumor", "Abrasion", "Abscess", "Acute", "Benign", "Biopsy", 
+        "Chronic", "Contusion", "Defibrillator", "Edema", "Embolism", "Epidermis", "Fracture", "Gland", 
+        "Hypertension", "Inpatient", "Intravenous", "Malignant", "Outpatient", "Prognosis", "Relapse", 
+        "Sutures", "Transplant", "Vaccine", "Zoonotic disease", "A-, an-", "-ation", "Dys-", "-ectomy", 
+        "-ismus", "-itis", "-lysis", "Macro-", "Melan/o-", "Micro-", "-ology", "-osis", "-otomy", "-pathy", 
+        "-plasty", "Poly-", "Pseudo-", "Retro-", "Cardi/o", "Derm/a/o, dermat/o", "Encephal/o", "Gastr/o", 
+        "Hemat/o", "My/o", "Oste/o", "Pulmon/o", "Rhin/o", "Sclerosis", "Stasis", "Therm/o", "ALS", 
+        "Bl wk", "BMI", "BP", "CPR", "C-spine", "DNR", "ED/ER", "EKG", "HDL-C", "HR", "LDL-C", "Lytes", 
+        "NICU", "OR", "Pre-op", "Psych", "PT", "Rx", "Stat", "Abdominal", "Adhesion", "ADR", "Amniocentesis", 
+        "Anaphylaxis", "Anemia", "Angina", "Angiography", "Antigen", "Blood Group", "BRCA", "Cancer", "CBC", 
+        "Cholesterol", "Coronary", "Diabetes", "Diastolic Blood Pressure", "Diathermy", "DVT", "EBCT", 
+        "ECG or EKG", "Enzyme", "False Negative", "Flavonoids", "FRAX Tool", "FX", "GAD", "Galactagogue", 
+        "Gangrene", "Gastric", "HAART (or ART)", "HDL", "Heart Attack", "Hemiplegia", "HRT", "Hypotension", 
+        "Hypoxia", "IBD", "Immunotherapy", "Incontinence", "IVF", "Jaundice", "Joint", "Keratin", "Ketamine", 
+        "LDL", "Lumbar", "Lumbosacral", "Lymph Node", "MRI", "Myocardial infarction", "Neonate", "NO", "NSAID", 
+        "Occipital lobe", "Occlusion", "Opiate", "Opioid", "Otitis", "Palliative care", "Pituitary gland", 
+        "Quadriplegia", "Radiograph", "Radial Tunnel Syndrome", "Remission", "Retroperitoneal", "SAD", "Sepsis", 
+        "Syndrome", "Systolic blood pressure", "Thoracic", "Thrombophilia", "Thrombosis", "TSH", "Ulcer", 
+        "Ultrasound", "Urinalysis", "Varicella", "Vascular", "Vena cava", "Wernicke’s area", "White blood cells", 
+        "Xeroderma", "Xerostomia", "X-ray", "YAG capsulotomy", "Zoonotic", "Aggravate", "Antibiotics", 
+        "Anti-inflammatory", "Asymptomatic", "Autoimmune disease", "Clinical study", "Clinical trial", 
+        "Condition", "Cutaneous", "Convalescence", "Degenerative", "Deteriorate", "Dose", "Effective", "Exert", 
+        "Fast", "Fatigue", "Gradually", "Glucose", "High risk", "Hypersensitivity", "Idiopathic", "Immune system", 
+        "Inflammation", "Inhibit", "Localized", "Long-term", "Moderate", "Monitor", "Narcotic", "Negative", 
+        "Neurologic", "Observe", "Occasionally", "Occupational therapist", "On an empty stomach", "Oral medication", 
+        "Paramount", "Permanent", "Pertinent", "Physical therapist", "Placebo", "Positive", "Prescription", 
+        "Prevent", "Progression", "Quarantine", "Reaction", "Regular", "Relief", "Research study", "Sensitive", 
+        "Severe", "Side effect", "Sign", "Stamina", "Steroids", "Supplement", "Suppress", "Taper", "Temporary", 
+        "Therapy", "Trigger", "Unnecessary", "Vague", "Voluntary", "Warning signs", "Wheeze"
+    ]
+    
+    return any(keyword.lower() in user_input.lower() for keyword in health_keywords)
 
-        health_keywords = ["health", "doctor", "medicine", "treatment", "symptom", "fever", "cough", "headache", "pain", "disease", "illness", "clinic", "tumor"]
-
-        return any(keyword in user_input.lower() for keyword in health_keywords)
 
 
     # Create a chat input field to allow the user to enter a message.
