@@ -9,7 +9,7 @@ Make sure you have Python installed, then install the required packages:
 
 pip install -r requirements.txt
 
-2. Run the App "streamlit run streamlit_app.py"
+2. Run the App using this link: https://chatbot-yylocdiqtn.streamlit.app/
 
 🏥 Features
 Healthcare Chatbot: Provides responses to health-related queries.
