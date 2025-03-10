@@ -85,7 +85,7 @@ else:
 
     def is_health_related(user_input):
 
-        health_keywords = ["health", "doctor", "medicine", "treatment", "symptom", "fever", "cough", "headache", "pain", 
+        health_keywords = ["health", "doctor", "dizzy", "medicine", "treatment", "symptom", "fever", "cough", "headache", "pain", 
         "disease", "illness", "clinic", "tumor", "Abrasion", "Abscess", "Acute", "Benign", "Biopsy", 
         "Chronic", "Contusion", "Defibrillator", "Edema", "Embolism", "Epidermis", "Fracture", "Gland", 
         "Hypertension", "Inpatient", "Intravenous", "Malignant", "Outpatient", "Prognosis", "Relapse", 
