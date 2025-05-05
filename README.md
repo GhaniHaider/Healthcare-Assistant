@@ -18,7 +18,7 @@ Medical Keywords Detection: Recognizes a vast range of medical terms.
 Basic Greetings: Handles simple greetings like "Hi" and "Hello".
 
 🔑 Usage
-Enter your Gemini API Key when prompted. API_key: "AIzaSyDXFintt_4qMGsShYLorvtoYkvsbdwlO2c"
+Enter your Gemini API Key when prompted. API_key: "AIzaSyAhUHN6XnEYeNx9g8QqsKKWKjtrc1tSnRA"
 Ask a health-related question (e.g., "What are the symptoms of diabetes?").
 Receive an AI-generated response based on the Gemini API.
 
